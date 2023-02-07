@@ -40,21 +40,24 @@
         td {
             letter-spacing: 1.5px;
         }
-        .btn:nth-child(odd){
+
+        .btn:nth-child(odd) {
             background-color: rgb(52, 232, 238);
             color: rgb(38, 53, 139);
             margin: 0px 1px 10px;
             border-radius: 15px;
         }
-        .btn:nth-child(even){
+
+        .btn:nth-child(even) {
             background-color: rgb(238, 150, 34);
             color: rgb(38, 53, 139);
             margin: 0px 1px 10px;
-            box-shadow:3px 3px 5px 6px #cccccc ;
+            box-shadow: 3px 3px 5px 6px #cccccc;
             border-radius: 15px;
         }
-        .btn:hover{
-            transform : scale(1.05);
+
+        .btn:hover {
+            transform: scale(1.05);
             background-color: rgb(146, 235, 45);
             transition: 0.3s;
         }
@@ -153,7 +156,7 @@
         data = url.searchParams.get("data");
         var arr = data.split('');
         lst = ["0-3歲兒童托育托育補助", "2-6歲兒童平價托育費用補助", "育有未滿二歲幼兒育兒津貼", "兒童臨時托育服務補助", "兒童臨時托育服務補助", "中低收入戶全民健康保險補助", "低收入戶及弱勢兒童少年醫療補助", "發展遲緩兒童早期療育補助"];
-        
+
         arr.forEach((num) => {
             $('#showTitleBox').append(`<button id="${num}" onclick="Msg(this)" type="button" class="btn btn-secondary">${lst[num]}</button>`)
         });
