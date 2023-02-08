@@ -130,7 +130,7 @@
                 <div class="col-2" id="selectBox">
                     <div>
                         <select class="form-select mb-2 mt-2" aria-label="Default select example" name="age">
-                            <option selected>補助對象年齡</option>
+                            <option value="" selected style="display: none;">補助對象年齡</option>
                             <option value="age2">2歲以下</option>
                             <option value="age2To3">2至3歲</option>
                             <option value="age3To6">3至6歲</option>
@@ -254,6 +254,12 @@
             //checkbox選中選項
             var cbxVehicle = new Array();
             $('input[type="checkbox"]:checked').each(function (i) { cbxVehicle[i] = this.value })
+
+            //送表單前檢查
+            if (cbxVehicle.length < 1 || $('select[name="age"]').val() == "") {
+                alert('請至少勾選一項身份資格選項，並選擇補助對象年齡');
+                return;
+            }
 
             // 被選中選項分為三大類裝成一物件
             arrayJudgment = {
